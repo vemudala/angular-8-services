@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ITile} from '../interfaces/itile';
-import { TilesService } from '../services/tiles.service';
+import { TilesService } from '../services/tiles.service';  //created new service// imported service
 
 @Component({
   selector: 'app-tiles',
@@ -14,12 +14,12 @@ export class TilesComponent implements OnInit {
   selected:string="price";
   selectedinput:string="";
 tiles:Array<ITile>=[];
-  constructor(private tilesService:TilesService) {
+  constructor(private tilesService:TilesService) { 
     this.searcheditems=this.tiles;
    }
 
   ngOnInit() {
-    this.tiles= this.tilesService.getTiles();
+    this.tiles= this.tilesService.getTiles();//call service method
     this.searcheditems=this.tiles;
   }
   search_filter(){
